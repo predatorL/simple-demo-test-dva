@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 import {Menu, Icon} from 'antd';
-import _MenuData from '../config/Aside';
+import _Aside from '../configs/Aside';
 const SubMenu = Menu.SubMenu;
 
 const Prat_aside = React.createClass({
@@ -24,7 +24,7 @@ const Prat_aside = React.createClass({
       this.onCollapseChange
     ];
     const renderMenu = () => {
-      return _MenuData.map((_item, _index) => {
+      return _Aside.map((_item, _index) => {
         const _subItems = _item.subItems.map((_subItem, subIndex) => {
           return (
             <Menu.Item key={_index + "_" + subIndex}>
