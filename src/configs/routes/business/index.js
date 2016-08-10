@@ -1,5 +1,5 @@
 const subRoutes = [
-  require('./productSetup'),
+  require('./product_setup'),
   require('./area'),
 ];
 export default {

@@ -4,11 +4,6 @@ import {Form, Input, Button, Checkbox} from 'antd';
 const FormItem = Form.Item;
 
 let Demo = React.createClass({
-  handleSubmit(e) {
-    e.preventDefault();
-    console.log('收到表单值：', this.props.form.getFieldsValue());
-  },
-
   render() {
     const {getFieldProps} = this.props.form;
     return (
