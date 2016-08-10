@@ -14,14 +14,13 @@ const _menu = [{
   "subItems": [{
     "title": "产品服务设置",
     "a_path": "/#/product_setup"
-  },{
+  }, {
     "title": "商圈管理",
     "a_path": "/#/area"
-  },
-  ,{
+  }, {
     "title": "人员管理",
     "a_path": "/#/staff"
-  },{
+  }, {
     "title": "商家管理",
     "a_path": "/#/partner"
   }]

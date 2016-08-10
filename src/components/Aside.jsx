@@ -4,6 +4,28 @@ import {Menu, Icon} from 'antd';
 import _Aside from '../configs/Aside';
 const SubMenu = Menu.SubMenu;
 
+const renderMenu = () => {
+  return _Aside.map((_item, _index) => {
+    const _subItems = _item.subItems.map((_subItem, subIndex) => {
+      return (
+        <Menu.Item key={_index + "_" + subIndex}>
+          <a href={_subItem.a_path}>{_subItem.title}</a>
+        </Menu.Item>
+      );
+    });
+    console.log(_subItems);
+    return (
+      <SubMenu key={_item.icon} title={
+        <span >
+        <Icon type={_item.icon}/>
+        <b className = "title-text" > {_item.title} </b> </span>
+      }>
+        {_subItems}
+      </SubMenu>
+    );
+  });
+};
+
 const Prat_aside = React.createClass({
   getInitialState() {
     return {
@@ -23,27 +45,7 @@ const Prat_aside = React.createClass({
       this.state.mode,
       this.onCollapseChange
     ];
-    const renderMenu = () => {
-      return _Aside.map((_item, _index) => {
-        const _subItems = _item.subItems.map((_subItem, subIndex) => {
-          return (
-            <Menu.Item key={_index + "_" + subIndex}>
-              <a href={_subItem.a_path}>{_subItem.title}</a>
-            </Menu.Item>
-          );
-        });
-        return (
-          <SubMenu key={_item.icon} title={
-            <span >
-            <Icon type={_item.icon}/>
-            <b className = "title-text" > {_item.title} </b> </span>
-          }>
-            {_subItems}
-          </SubMenu>
-        );
-      });
 
-    };
     return (
       <aside className={collapse ? "layout-aside layout-aside-collapse" : "layout-aside"}>
         <div className="layout-logo"></div>
