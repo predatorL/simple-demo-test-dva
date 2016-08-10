@@ -9,24 +9,21 @@
 }
 */
 const _menu = [{
-  "title": "用户管理",
+  "title": "业务管理",
   "icon": "user",
   "subItems": [{
-    "title": "用户列表",
-    "a_path": "/#/user/user_list"
+    "title": "产品服务设置",
+    "a_path": "/#/product_setup"
   },{
-    "title": "用户添加",
-    "a_path": "/#/user/user_add"
-  }]
-}, {
-  "title": "订单管理",
-  "icon": "inbox",
-  "subItems": [{
-    "title": "订单列表",
-    "a_path": "/#/order/order_list"
-  }, {
-    "title": "提交订单",
-    "a_path": "/#/order/order_add"
+    "title": "商圈管理",
+    "a_path": "/#/area"
+  },
+  ,{
+    "title": "人员管理",
+    "a_path": "/#/staff"
+  },{
+    "title": "商家管理",
+    "a_path": "/#/partner"
   }]
 }];
 

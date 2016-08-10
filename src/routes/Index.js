@@ -1,14 +1,7 @@
 import React, {PropTypes} from 'react';
 import {Router, Route, IndexRoute, Link} from 'dva/router';
-import pageRouts from './configs/Routes';
-pageRouts.push({
-  path: '*',
-  getComponent: (location, callback) => {
-    require.ensure([], (require) => {
-      callback(null, require('./pages/NoFound.jsx'));
-    })
-  }
-})
+import pageRouts from './routes/index';
+
 const routes = {
   path: '/',
   component: require('./components/App'),
@@ -21,7 +14,14 @@ const routes = {
   },
   childRoutes: pageRouts
 };
-
+pageRouts.push({
+  path: '*',
+  getComponent: (location, callback) => {
+    require.ensure([], (require) => {
+      callback(null, require('../page/error/Error404'));
+    })
+  }
+});
 export default function({history}) {
-  return (<Router routes={routes} history={history}/>);
+  return (<Router routes={routes} history={history} />);
 };

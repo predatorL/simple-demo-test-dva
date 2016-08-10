@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 //Part
-import Part_aside from '../components/Aside';
-import Breadcrumb from '../components/Breadcrumb';
+import Part_aside from '../Aside';
+import Breadcrumb from '../Breadcrumb';
 
 const MainLayout = React.createClass({
   render() {
