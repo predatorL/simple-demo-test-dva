@@ -1,7 +1,7 @@
 import {componentsPath,pagesPath} from '../pathCfg';
 
 export default [{
-    path: 'product_setup',
+    path: '/business/product_setup',
     getComponent: (location, callback) => {
       require.ensure([], (require) => {
         callback(null, require(componentsPath + 'Form.jsx'));

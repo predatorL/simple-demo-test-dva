@@ -13,16 +13,16 @@ const _menu = [{
   "icon": "user",
   "subItems": [{
     "title": "产品服务设置",
-    "a_path": "/#/product_setup"
+    "a_path": "/#/business/product_setup"
   }, {
     "title": "商圈管理",
-    "a_path": "/#/area"
+    "a_path": "/#/business/area"
   }, {
     "title": "人员管理",
-    "a_path": "/#/staff"
+    "a_path": "/#/business/staff"
   }, {
     "title": "商家管理",
-    "a_path": "/#/partner"
+    "a_path": "/#/business/partner"
   }]
 }];
 

@@ -2,20 +2,20 @@ import React, {PropTypes} from 'react';
 import {Router, Route, IndexRoute, Link} from 'dva/router';
 import pageRouts from './configs/Routes';
 pageRouts.push({
-  path: '*',
-  getComponent: (location, callback) => {
+  path: '/*',
+  getComponent: (location, callback) => {console.log('*')
     require.ensure([], (require) => {
       callback(null, require('./pages/NoFound.jsx'));
     })
   }
-})
+});
 const routes = {
   path: '/',
   component: require('./components/App'),
   indexRoute: {
-    getComponent: (location, callback) => {
+    getComponent: (location, callback) => {console.log(123)
       require.ensure([], (require) => {
-        callback(null, require('./components/List.jsx'));
+        callback(null, require('./pages/business/product_setup.jsx'));
       })
     }
   },

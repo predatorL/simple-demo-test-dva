@@ -13,7 +13,6 @@ const renderMenu = () => {
         </Menu.Item>
       );
     });
-    console.log(_subItems);
     return (
       <SubMenu key={_item.icon} title={
         <span >
