@@ -1,0 +1,22 @@
+.layout-container {
+  margin-left: 224px;
+  width: ~'calc(100% - 224px)';
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  .con-breadcrumb {
+    height: 30px;
+    box-sizing: border-box;
+    padding: 7px 0 0 24px;
+  }
+  .con-body {
+    width: 100%;
+    height: ~'calc(100% - 30px)';
+    overflow-x: hidden;
+    overflow-y: auto;
+    @import "./views/form.less";
+    @import "./views/list.less";
+  }
+}

@@ -5,24 +5,31 @@
   },
   "dependencies": {
     "antd": "^1.8.0",
+    "atool-build": "^0.7.18",
     "dva": "^0.0.9",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.6.1"
   },
   "devDependencies": {
-    "atool-build": "^0.7.6",
+    "atool-build": "^0.7.18",
     "atool-test-mocha": "^0.1.5",
     "babel-plugin-antd": "^0.4.1",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-runtime": "^6.9.2",
+    "del": "^2.2.1",
     "dora": "0.3.x",
     "dora-plugin-proxy": "^0.7.0",
     "dora-plugin-webpack": "0.6.x",
     "dora-plugin-webpack-hmr": "^0.1.0",
     "expect": "^1.20.2",
     "gulp": "^3.9.1",
-    "gulp-less": "^3.1.0"
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-less": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
   },
   "scripts": {
     "start": "dora --plugins \"proxy,webpack,webpack-hmr\"",
