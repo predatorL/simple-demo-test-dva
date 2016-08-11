@@ -4,7 +4,9 @@ import {Form, Input, Button, Checkbox, Table, Icon, Select} from 'antd';
 const [FormItem, Option] = [Form.Item, Select.Option];
 
 const columns = [{"title":"城市","dataIndex":"age","key":"age0"},{"title":"商圈","dataIndex":"age","key":"age1"},{"title":"调度模式","dataIndex":"age","key":"age2"},{"title":"在职人员数","dataIndex":"age","key":"age3"},{"title":"负责人","dataIndex":"age","key":"age4"},{"title":"联系电话","dataIndex":"age","key":"age5"},{"title":"状态","dataIndex":"age","key":"age6"},{"title":"操作","dataIndex":"age","key":"age7"}];
-const data = [];
+
+
+
 const _List = React.createClass({
   handleSubmit(e) {
     e.preventDefault();

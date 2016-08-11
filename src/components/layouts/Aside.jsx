@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 import {Menu, Icon} from 'antd';
-import _Aside from '../configs/Aside';
+import _Aside from '../../configs/Aside';
 const SubMenu = Menu.SubMenu;
 
 const renderMenu = () => {
