@@ -5,14 +5,12 @@ import allModels from './models';
 
 // 1. Initialize
 const app = dva();
-
 // 2. Model
-// allModels.forEach( models => {
-//   models.forEach( theModel => {
-//     app.model(theModel);
-//   });
-// })
-app.model(require('./models/business/area.js'));
+allModels.forEach( models => {
+  models.forEach( theModel => {
+    app.model(theModel);
+  });
+})
 // 3. Router
 app.router(require('./router'));
 

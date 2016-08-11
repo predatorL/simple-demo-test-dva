@@ -3,7 +3,7 @@ import {Breadcrumb} from 'antd';
 
 const _Breadcrumb = React.createClass({
   render() {
-    console.log('bread',this.props.data)
+    // console.log('bread',this.props.data)
     const _data = this.props.data.map(
       (item,index) => <Breadcrumb.Item key={index}>{item}</Breadcrumb.Item>
      );

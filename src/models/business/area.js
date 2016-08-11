@@ -1,13 +1,18 @@
 import { call, put } from 'dva/effects';
-
+import { query } from '../../services/area';
 export default {
-
+  
   namespace: 'area',
   state: {
-    search: {
+    searchs: {
       area: 'lucy',
     },
-    list: []
+    lists: {
+      list: [],
+      loading: false,
+      total: null,
+      current: 1,
+    }
   },
 
   subscriptions: [
@@ -16,13 +21,25 @@ export default {
   ],
 
   effects: {
-    *['examples/query']({ payload }) {
+    *['list/query']({ payload }) {
+      const { data } = yield call(query, '/api/area', payload);
+      if (data) {
+        yield put({
+          type: 'list/query/success',
+          payload: {
+            list: data.data,
+            total: data.page.total,
+            current: data.page.current
+          }
+        });
+      }
     },
   },
 
   reducers: {
-    ['examples/save'](state, action) {
-      return { ...state, ...action.payload };
+    ['list/query/success'](state, action) {
+      let list = {lists: {...state.list, ...action.payload }};
+      return { ...state, ...list,loading: false };
     },
   },
 }
