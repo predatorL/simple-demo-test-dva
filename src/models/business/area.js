@@ -2,8 +2,12 @@ import { call, put } from 'dva/effects';
 
 export default {
 
-  namespace: 'business',
+  namespace: 'area',
   state: {
+    search: {
+      area: 'lucy',
+    },
+    list: []
   },
 
   subscriptions: [

@@ -7,11 +7,12 @@ import allModels from './models';
 const app = dva();
 
 // 2. Model
-allModels.forEach( models => {
-  models.forEach( theModel => {
-    app.model(theModel);
-  });
-})
+// allModels.forEach( models => {
+//   models.forEach( theModel => {
+//     app.model(theModel);
+//   });
+// })
+app.model(require('./models/business/area.js'));
 // 3. Router
 app.router(require('./router'));
 
