@@ -8,7 +8,7 @@ import key from 'keymaster';
 const app = dva();
 
 app.model({
-  namespace: 'count',
+  namespace: 'count1',
   state: {
     record: 0,
     current: 0,
@@ -38,7 +38,7 @@ app.model({
   ]
 });
 
-const CountApp = ({count, dispatch}) => {
+const CountApp = ({count2, dispatch}) => {
   return (
     <div className={styles.normal}>
       <div className={styles.record}>Highest Record: {count.record}</div>
@@ -51,7 +51,7 @@ const CountApp = ({count, dispatch}) => {
 };
 
 function mapStateToProps(state) {
-  return { count: state.count };
+  return { count2: state.count1 };
 }
 const HomePage = connect(mapStateToProps)(CountApp);
 

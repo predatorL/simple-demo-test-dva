@@ -1,7 +1,7 @@
 import { call, put } from 'dva/effects';
 import { query } from '../../services/area';
 export default {
-  
+
   namespace: 'area',
   state: {
     searchs: {
@@ -12,6 +12,9 @@ export default {
       loading: false,
       total: null,
       current: 1,
+      currentItem: {},
+      modalVisible: false,
+      modalType: 'create'
     }
   },
 
