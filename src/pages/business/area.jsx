@@ -8,13 +8,13 @@ let [ Search, List] = [
   ];
 
 const View = ({area, dispatch}) => {
-  const {searchs, lists} = area;
+  const {searchs, lists, configs} = area;
   const {list, loading, total, current} = lists;
 
   const searchProps = {
     searchs,
     onSearch(fieldsValue) {
-      dispatch({type: 'list/query', payload: fieldsValue});
+      dispatch({type: 'list/query', payload: fieldsValue, api: configs.api});
     },
     onAdd() {
       dispatch({

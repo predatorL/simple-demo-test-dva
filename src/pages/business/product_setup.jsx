@@ -1,7 +1,10 @@
 import React, {Component, PropTypes} from 'react';
-import {Form, Input, Button, Checkbox, Row, Col, DatePicker, Radio} from 'antd';
+import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio} from 'antd';
 import {connect} from 'dva';
-const FormItem = Form.Item;
+import {C_radio} from '../../utils/createFormItem.js';
+
+
+const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
 
 let MainForm = (props) => {
   const {getFieldProps, validateFields, getFieldsValue} = props.form;
@@ -23,18 +26,20 @@ let MainForm = (props) => {
       <Row type="flex" justify="start">
         <Col sm={11}>
           <FormItem label="产品名称" {...layouts._8_12} >
-            <Input placeholder="请输入搜索名称" size="default" />
+            <Input {...getFieldProps('name')}/>
           </FormItem>
           <FormItem label="营业时间" {...layouts._8_12} >
-            <Input placeholder="请输入搜索名称" size="default" />
+            <Input {...getFieldProps('time')} />
           </FormItem>
         </Col>
         <Col sm={11}>
           <FormItem label="业务模式" {...layouts._8_12} >
-            <Radio value="2">本地生活圈即时送</Radio>
+            <RadioGroup {...getFieldProps('type')}>
+              <Radio value={1}>本地生活圈即时送</Radio>
+            </RadioGroup>
           </FormItem>
           <FormItem label="配送时间(分钟)" {...layouts._8_12} >
-            <Input placeholder="请输入搜索名称" size="default" />
+            <Input placeholder="请输入搜索名称" {...getFieldProps('time2')}/>
           </FormItem>
         </Col>
 
@@ -42,15 +47,10 @@ let MainForm = (props) => {
       <p>产品定价</p>
       <Row>
       <Col sm={22}>
-        <FormItem label="定价模式" {...layouts._4_16} >
-          <Radio value="2">阶梯定价</Radio>
-          <Radio value="2">一口价</Radio>
-        </FormItem>
-        <FormItem label="定价方案" _4_16 >
-          <Radio value="2">距离+时间阶梯价</Radio>
-          <Radio value="2">距离阶梯价</Radio>
-          <Radio value="2">时间阶梯价</Radio>
-        </FormItem>
+        {C_radio(getFieldProps,{layout:layouts._4_16,label:"定价模式",field:'type2'})}
+
+        {C_radio(getFieldProps,{layout:layouts._4_16,label:"定价方案",field:'type3'})}
+        
       </Col>
       </Row>
       <FormItem wrapperCol={{ span: 16, offset: 6 }}>
@@ -63,6 +63,10 @@ let MainForm = (props) => {
 MainForm = Form.create()(MainForm);
 
 let View = ({product_setup,dispatch}) => {
+  //const {} = product_setup;
+  const fromProps = {
+
+  };
   return (
     <div className="con-body">
       <div className="bd-header"></div>

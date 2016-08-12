@@ -21,7 +21,7 @@ export default [
       ['list/query'](params) {
         const {
           data
-        } = yield call(query, '/api/area', params.payload);
+        } = yield call(query, params.api, params.payload);
         if (data) {
           yield put({
             type: 'list/query/success',
@@ -63,6 +63,9 @@ export default [
         currentItem: {},
         modalVisible: false,
         modalType: 'create'
+      },
+      configs: {
+        api: '/api/area'
       }
     },
 

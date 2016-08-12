@@ -14,6 +14,9 @@ export default {
         currentItem: {},
         modalVisible: false,
         modalType: 'create'
+      },
+      configs: {
+        api: '/api/area'
       }
     },
   },
