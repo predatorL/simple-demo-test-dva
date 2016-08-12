@@ -4,16 +4,16 @@ import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio}
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
 
 export function C_radio(getFieldProps,params) {
-  const {layouts,field="noFiled",label = "没填值"} = params;
-  console.log(params)
+  const {layout,field="noFiled",label = "没填值", data} = params;
+  // console.log(data) //这个会重复出发，什么机制，组件？？？
   return (
-    <FormItem label={label} {...layouts} >
+    <FormItem label={label} {...layout} >
       <RadioGroup {...getFieldProps(field)}>
-        <Radio value={1}>阶梯定价</Radio>
-        <Radio value={2}>一口价</Radio>
+        {data.map(
+          (item,index) => <Radio key={field + index} value={item.val}>{item.title}</Radio>
+        )}
       </RadioGroup>
     </FormItem>
-
   );
 };
 export function C_select(getFieldProps,{layouts,field="noFiled",label = "没填值"}) {

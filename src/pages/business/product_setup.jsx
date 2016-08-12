@@ -5,7 +5,6 @@ import {C_radio} from '../../utils/createFormItem.js';
 
 
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
-
 let MainForm = (props) => {
   const {getFieldProps, validateFields, getFieldsValue} = props.form;
   const formItemLayout = {
@@ -47,10 +46,11 @@ let MainForm = (props) => {
       <p>产品定价</p>
       <Row>
       <Col sm={22}>
-        {C_radio(getFieldProps,{layout:layouts._4_16,label:"定价模式",field:'type2'})}
 
-        {C_radio(getFieldProps,{layout:layouts._4_16,label:"定价方案",field:'type3'})}
-        
+        {C_radio(getFieldProps,{layout:layouts._4_16,label:"定价模式",field:'type2',data:[{val:'1',title:'阶梯定价'},{val:'2',title:'一口价'}]})}
+
+        {C_radio(getFieldProps,{layout:layouts._4_16,label:"定价方案",field:'type3',data:[{val:1,title:'阶梯定价'},{val:2,title:'一口价'}]})}
+
       </Col>
       </Row>
       <FormItem wrapperCol={{ span: 16, offset: 6 }}>
