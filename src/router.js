@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {Router, Route, IndexRoute, Link} from 'dva/router';
-import pageRouts from './configs/Routes';
+import pageRouts from './Routes';
 pageRouts.push({
   path: '/*',
   getComponent: (location, callback) => {console.log('*')
