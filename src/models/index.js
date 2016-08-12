@@ -1,3 +1,4 @@
+
 export default [
-  require('./business'),
+  require('./business.js'),
 ]

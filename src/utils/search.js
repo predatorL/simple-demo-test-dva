@@ -1,31 +1,10 @@
 import { call, put } from 'dva/effects';
 import { query } from '../../services/area';
-export default {
 
-  namespace: 'area',
-  state: {
-    searchs: {
-      area: 'lucy',
-    },
-    lists: {
-      list: [],
-      loading: false,
-      total: null,
-      current: 1,
-      currentItem: {},
-      modalVisible: false,
-      modalType: 'create'
-    }
-  },
-
-  subscriptions: [
-    function(dispatch) {
-    },
-  ],
-
+export const listSearch = {
   effects: {
-    *['list/query']({ payload }) {
-      const { data } = yield call(query, '/api/area', payload);
+    *['list/query'](params) {
+      const { data } = yield call(query, '/api/area', params.payload);
       if (data) {
         yield put({
           type: 'list/query/success',
@@ -45,4 +24,4 @@ export default {
       return { ...state, ...list,loading: false };
     },
   },
-}
+};
