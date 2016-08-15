@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import { Form, Input, Button, Checkbox, Table, Icon, Select, Pagination, Popconfirm } from 'antd';
 const [FormItem, Option] = [Form.Item, Select.Option];
 
-let Search = (props) => {
+let Search = ({children}props) => {
   const {getFieldProps, validateFields, getFieldsValue} = props.form;
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +23,6 @@ let Search = (props) => {
         </Select>
       </FormItem>
       <Button type="primary" htmlType="submit">查询</Button>
-      {props.children}
     </Form>
   );
 };

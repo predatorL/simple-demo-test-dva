@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio} from 'antd';
 import {connect} from 'dva';
+import {business_product_setup} from '../configs'
 import {C_radio} from '../../utils/createFormItem.js';
 
 

@@ -3,7 +3,7 @@ import { query } from '../services/area';
 
 export default [
   {
-    namespace: 'product_setup',
+    namespace: 'business-product_setup',
     state: {
       name: '',
       time1: '',
