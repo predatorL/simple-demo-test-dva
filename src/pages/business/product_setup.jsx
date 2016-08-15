@@ -7,11 +7,8 @@ import {C_radio} from '../../utils/createFormItem.js';
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
 let MainForm = (props) => {
   const {getFieldProps, validateFields, getFieldsValue} = props.form;
-  const formItemLayout = {
-    labelCol: { span: 6 },
-    wrapperCol: { span: 14 },
-  };
-  const layouts = {
+
+  const _cols = {
     _8_12: {labelCol: { span: 6 },  wrapperCol: { span: 14 }},
     _4_16: {labelCol: { span: 4 },  wrapperCol: { span: 16 }},
   }
@@ -24,20 +21,20 @@ let MainForm = (props) => {
       <p>产品基本信息</p>
       <Row type="flex" justify="start">
         <Col sm={11}>
-          <FormItem label="产品名称" {...layouts._8_12} >
+          <FormItem label="产品名称" {..._cols._8_12} >
             <Input {...getFieldProps('name')}/>
           </FormItem>
-          <FormItem label="营业时间" {...layouts._8_12} >
+          <FormItem label="营业时间" {..._cols._8_12} >
             <Input {...getFieldProps('time')} />
           </FormItem>
         </Col>
         <Col sm={11}>
-          <FormItem label="业务模式" {...layouts._8_12} >
+          <FormItem label="业务模式" {..._cols._8_12} >
             <RadioGroup {...getFieldProps('type')}>
               <Radio value={1}>本地生活圈即时送</Radio>
             </RadioGroup>
           </FormItem>
-          <FormItem label="配送时间(分钟)" {...layouts._8_12} >
+          <FormItem label="配送时间(分钟)" {..._cols._8_12} >
             <Input placeholder="请输入搜索名称" {...getFieldProps('time2')}/>
           </FormItem>
         </Col>
@@ -47,9 +44,9 @@ let MainForm = (props) => {
       <Row>
       <Col sm={22}>
 
-        {C_radio(getFieldProps,{layout:layouts._4_16,label:"定价模式",field:'type2',data:[{val:'1',title:'阶梯定价'},{val:'2',title:'一口价'}]})}
+        {C_radio(getFieldProps,{cols:_cols._4_16,label:"定价模式",field:'type2',data:[{val:'1',title:'阶梯定价'},{val:'2',title:'一口价'}]})}
 
-        {C_radio(getFieldProps,{layout:layouts._4_16,label:"定价方案",field:'type3',data:[{val:1,title:'阶梯定价'},{val:2,title:'一口价'}]})}
+        {C_radio(getFieldProps,{cols:_cols._4_16,label:"定价方案",field:'type3',data:[{val:1,title:'阶梯定价'},{val:2,title:'一口价'}]})}
 
       </Col>
       </Row>
