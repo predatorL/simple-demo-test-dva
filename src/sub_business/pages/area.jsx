@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import { Form, Input, Button, Checkbox, Table, Icon, Select, Pagination, Popconfirm } from 'antd';
 import {connect} from 'dva';
-import {business_area} from '../configs.js';
+import {business_area} from '../../configs.js';
 
 let [ Search, List] = [
     require('../../components/Search.jsx'),
@@ -32,7 +32,7 @@ const View = ({area, dispatch}) => {
     loading,
     total,
     current,
-    columns: ,
+    columns: business_area.list.columns,
     pagination: false,
     onPageChange(page) {
       dispatch({

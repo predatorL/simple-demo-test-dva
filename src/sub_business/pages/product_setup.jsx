@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio} from 'antd';
 import {connect} from 'dva';
-import {C_radio} from '../../utils/createFormItem.js';
+import {Item_Radios} from '../../components/CreateItems.js';
 
 
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
@@ -44,9 +44,9 @@ let MainForm = (props) => {
       <Row>
       <Col sm={22}>
 
-        {C_radio(getFieldProps,{cols:_cols._4_16,label:"定价模式",field:'type2',data:[{val:'1',title:'阶梯定价'},{val:'2',title:'一口价'}]})}
+        {Item_Radios(getFieldProps,{cols:_cols._4_16,label:"定价模式",field:'type2',data:[{val:'1',title:'阶梯定价'},{val:'2',title:'一口价'}]})}
 
-        {C_radio(getFieldProps,{cols:_cols._4_16,label:"定价方案",field:'type3',data:[{val:1,title:'阶梯定价'},{val:2,title:'一口价'}]})}
+        {Item_Radios(getFieldProps,{cols:_cols._4_16,label:"定价方案",field:'type3',data:[{val:1,title:'阶梯定价'},{val:2,title:'一口价'}]})}
 
       </Col>
       </Row>

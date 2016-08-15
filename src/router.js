@@ -7,7 +7,7 @@ pageRouts.push({
   path: '/*',
   getComponent: (location, callback) => {console.log('*')
     require.ensure([], (require) => {
-      callback(null, require('./pages/NoFound.jsx'));
+      callback(null, require('./components/NoFound.jsx'));
     })
   }
 });

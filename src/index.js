@@ -1,7 +1,8 @@
 import './index.html';
 import dva, { connect } from 'dva';
-import allModels from './models';
-
+let allModels = [
+  require('./sub_business/models')
+];
 
 // 1. Initialize
 const app = dva();

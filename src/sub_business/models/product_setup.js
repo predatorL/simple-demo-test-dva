@@ -1,5 +1,5 @@
 import { call, put } from 'dva/effects';
-import { query } from '../services/area';
+import { query } from '../../services/query';
 
 export default  {
     namespace: 'business_product_setup',

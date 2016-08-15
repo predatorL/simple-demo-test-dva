@@ -3,9 +3,8 @@ import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio}
 
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
 
-export function C_radio(getFieldProps,params) {
+export let Item_Radios = (getFieldProps,params) => {
   const {cols,field="noFiled",label = "没填值", data} = params;
-  // console.log(data) //这个会重复出发，什么机制，组件？？？
   return (
     <FormItem label={label} {...cols} >
       <RadioGroup {...getFieldProps(field)}>
@@ -16,7 +15,9 @@ export function C_radio(getFieldProps,params) {
     </FormItem>
   );
 };
-export function C_select(getFieldProps,{cols,field="noFiled",label = "没填值"}) {
+
+export let Item_Selects = (getFieldProps,params) => {
+  const {cols,field="noFiled",label = "没填值", data} = params;
   return (
     <FormItem label={label} {...cols} >
       <RadioGroup {...getFieldProps(field)}>
@@ -24,6 +25,5 @@ export function C_select(getFieldProps,{cols,field="noFiled",label = "没填值"
         <Radio value={2}>一口价</Radio>
       </RadioGroup>
     </FormItem>
-
   );
 };
