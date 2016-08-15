@@ -1,6 +1,11 @@
 import React, {PropTypes} from 'react';
 import {Router, Route, IndexRoute, Link} from 'dva/router';
-import pageRouts from './Routes';
+let pageRouts = [
+                  require('./sub_account/routes'),
+                  require('./sub_business/routes'),
+                  require('./sub_finance/routes'),
+                  require('./sub_schedule/routes')
+ ]
 pageRouts.push({
   path: '/*',
   getComponent: (location, callback) => {console.log('*')
