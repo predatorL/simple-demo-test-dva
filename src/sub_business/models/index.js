@@ -1,4 +1,5 @@
 
 export default [
-  require('./business.js'),
+  require('./product_setup.js'),
+  require('./area.js'),
 ]

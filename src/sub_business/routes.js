@@ -3,7 +3,7 @@ const subRoutes = [
     path: 'area',
     getComponent: (location, callback) => {
       require.ensure([], (require) => {
-        callback(null, require('../pages/business/area.jsx'));
+        callback(null, require('../pages/area.jsx'));
       })
     },
   },
@@ -11,7 +11,7 @@ const subRoutes = [
     path: 'product_setup',
     getComponent: (location, callback) => {
       require.ensure([], (require) => {
-        callback(null, require('../pages/business/product_setup.jsx'));
+        callback(null, require('../pages/product_setup.jsx'));
       })
     },
   }

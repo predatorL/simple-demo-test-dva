@@ -7,9 +7,6 @@ function App({children}) {
       {children}
     </MainLayout>
   );
-}
-
-App.propTypes = {
 };
 
 export default App;
