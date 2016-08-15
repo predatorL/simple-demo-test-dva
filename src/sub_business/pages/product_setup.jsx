@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio} from 'antd';
 import {connect} from 'dva';
-import {Item_Radios} from '../../components/CreateItems.js';
+import {Item_Radios} from '../../components/CreateItems.jsx';
 
 
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
@@ -74,8 +74,8 @@ let View = ({product_setup,dispatch}) => {
   );
 };
 
-function mapStateToProps({product_setup}) {
-  return {product_setup};
+function mapStateToProps({business_product_setup}) {
+  return {business_product_setup};
 };
 
 export default connect(mapStateToProps)(View);

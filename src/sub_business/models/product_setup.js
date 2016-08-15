@@ -3,6 +3,9 @@ import { query } from '../../services/query';
 
 export default  {
     namespace: 'business_product_setup',
+    state: {
+      name: '',
+    },
     subscriptions: [
       function(dispatch) {},
     ],
