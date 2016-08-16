@@ -71,15 +71,20 @@ let MainForm = (props) => {
                 <Input type="staffAccount" placeholder="员工账号"
                   {...getFieldProps('staffAccount')} />
               </FormItem>
-              <FormItem label="密码">
-                <Input type="password" placeholder="请输入密码"
-                  {...getFieldProps('password')} />
+              <FormItem label="工号">
+                <Input type="Staffid" placeholder="员工工号"
+                  {...getFieldProps('Staffid')} />
               </FormItem>
 
-              <FormItem>
-                <Checkbox {...getFieldProps('agreement')}>记住我</Checkbox>
+              <FormItem label="商圈">
+                <Select style={{ width: 120 }} {...getFieldProps('area',{initialValue: props.searchs.area || ''})}>
+                  <Option value="1">圈1</Option>
+                  <Option value="2">圈2</Option>
+                  <Option value="3">圈3</Option>
+                </Select>
               </FormItem>
 
+              <Button type="primary" htmlType="submit">查询</Button>
               <Button type="primary" htmlType="submit">登录</Button>
             </Form>
 
