@@ -1,9 +1,9 @@
 const subRoutes = [
   {
-    path: 'area',
+    path: 'area_list',
     getComponent: (location, callback) => {
       require.ensure([], (require) => {
-        callback(null, require('./pages/area'));
+        callback(null, require('./pages/area_list'));
       })
     },
   },

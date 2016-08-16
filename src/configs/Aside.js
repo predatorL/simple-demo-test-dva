@@ -7,22 +7,17 @@ const _menu = [
         {
         "icon": "user",
         "title": "产品服务设置",
-        "hasThird":true,
-            "thirdItems": [
-              {
-                "title": "23",
-                "a_path": "/#/＃"
-              }
-             ]
+        "a_path": "/#/sub_business/product_setup",
+        "hasThird":false,
         },
         {
         "icon": "user",
-        "title": "商圈管理",
+        "title": "商圈区域管理",
         "hasThird":true,
         "thirdItems": [
           {
-            "title": "三级菜单",
-            "a_path": "/#/＃"
+            "title": "商圈管理",
+            "a_path": "/#/sub_business/area_list"
           }
          ]
         },
@@ -47,7 +42,6 @@ const _menu = [
             "title": "骑士审核日志",
             "a_path": "/#/sub_business/knight_check_log"
           },
-
          ]
         },
         {
@@ -56,14 +50,21 @@ const _menu = [
         "hasThird":true,
         "thirdItems": [
           {
-            "title": "三级菜单",
-            "a_path": "/#/＃"
+            "title": "商家列表",
+            "a_path": "/#/sub_business/partner_list"
+          },
+          {
+            "title": "商家审核",
+            "a_path": "/#/sub_business/partner_check"
+          },
+          {
+            "title": "商家审核日志",
+            "a_path": "/#/sub_business/knight_check_log"
           }
          ]
-        }
+        },
     ]
   },
-
   {
     "title": "账号管理",
     "icon": "user",
@@ -85,6 +86,7 @@ const _menu = [
       }
     ]
   }
+
 ];
 
 export default _menu;

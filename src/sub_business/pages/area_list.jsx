@@ -1,9 +1,62 @@
 import React, {Component, PropTypes} from 'react';
 import { Form, Input, Button, Checkbox, Table, Icon, Select, Pagination, Popconfirm } from 'antd';
 import {connect} from 'dva';
-import {business_area} from '../configs.jsx';
 
-const [pageCfgs,FormItem,Option] = [business_area,Form.Item,Select.Option];
+const pageCfgs = {
+  searchs:{
+  },
+  lists: {
+    columns:[
+      {
+        "title": "城市",
+        "dataIndex": "age",
+        "key": "age0"
+      }, {
+        "title": "商圈",
+        "dataIndex": "age",
+        "key": "age1",
+        render: (text, record) => (
+          <a onClick={() => onShowItem(record)}>{text}</a>
+        )
+      }, {
+        "title": "调度模式",
+        "dataIndex": "age",
+        "key": "age2"
+      }, {
+        "title": "在职人员数",
+        "dataIndex": "age",
+        "key": "age3"
+      }, {
+        "title": "负责人",
+        "dataIndex": "age",
+        "key": "age4"
+      }, {
+        "title": "联系电话",
+        "dataIndex": "age",
+        "key": "age5"
+      }, {
+        "title": "状态",
+        "dataIndex": "age",
+        "key": "age6"
+      },  {
+        title: '操作',
+        key: 'operation',
+        render: (text, record) => (
+          <p>
+            <a onClick={() => onEditItem(record)}>编辑</a>
+            &nbsp;
+            <Popconfirm title="确定要删除吗？" onConfirm={() => onDeleteItem(record.id)}>
+              <a>删除</a>
+            </Popconfirm>
+          </p>
+        )
+      }
+    ]
+  }
+
+};
+
+const [FormItem,Option] = [Form.Item,Select.Option];
 let Search = ({form,area}) => {
   const { getFieldProps, getFieldsValue } = form;
   function handleSubmit(e) {
@@ -48,7 +101,7 @@ const View = ({business_area, dispatch}) => {
     loading,
     total,
     current,
-    columns: pageCfgs.list.lists.columns,
+    columns: pageCfgs.lists.columns,
     pagination: false,
     onPageChange(page) {
       dispatch({
