@@ -4,6 +4,8 @@ import {connect} from 'dva';
 import { Item_Radios, Item_Input} from '../../components/CreateItems.jsx';
 
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
+
+//components
 let MainForm = (props) => {
   const {getFieldProps, validateFields, getFieldsValue} = props.form;
 
