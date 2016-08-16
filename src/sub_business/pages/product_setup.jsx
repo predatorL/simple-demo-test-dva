@@ -3,15 +3,14 @@ import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio}
 import {connect} from 'dva';
 import {Item_Radios} from '../../components/CreateItems.jsx';
 
-
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
 let MainForm = (props) => {
- const {getFieldProps, validateFields, getFieldsValue} = props.form;
+  const {getFieldProps, validateFields, getFieldsValue} = props.form;
 
   const _cols = {
-    _8_12: {labelCol: { span: 6 },  wrapperCol: { span: 14 }},
-    _4_16: {labelCol: { span: 4 },  wrapperCol: { span: 16 }},
-  }
+    _8_12: {l_s:8, w_s: 12},
+    _4_16: {l_s:4, w_s: 16},
+  };
   function handleSubmit(e) {
     e.preventDefault();
     console.log('收到表单值：', getFieldsValue());
@@ -21,33 +20,59 @@ let MainForm = (props) => {
       <p>产品基本信息</p>
       <Row type="flex" justify="start">
         <Col sm={11}>
-          <FormItem label="产品名称" {..._cols._8_12} >
-            <Input {...getFieldProps('name')}/>
-          </FormItem>
-          <FormItem label="营业时间" {..._cols._8_12} >
-            <Input {...getFieldProps('time')} />
-          </FormItem>
+          <Item_Input {...ItemParams(
+            {getFieldProps},
+            {
+              label:'产品名称',
+              cols:_cols._8_12,
+              field:'name'
+            })}/>
+          <Item_Input {...ItemParams(
+            {getFieldProps},
+            {
+              label:'营业时间',
+              cols:_cols._8_12,
+              field:'time'
+            })}/>
         </Col>
         <Col sm={11}>
-          <FormItem label="业务模式" {..._cols._8_12} >
-            <RadioGroup {...getFieldProps('type')}>
-              <Radio value={1}>本地生活圈即时送</Radio>
-            </RadioGroup>
-          </FormItem>
-          <FormItem label="配送时间(分钟)" {..._cols._8_12} >
-            <Input placeholder="请输入搜索名称" {...getFieldProps('time2')}/>
-          </FormItem>
+          <Item_Radios {...ItemParams(
+            {getFieldProps},
+             {
+               data:[{val:1,title:'本地生活圈即时送'}],
+               label:'业务模式',cols:_cols._8_12,
+               field:'name'
+             })}
+          />
+          <Item_Input {...ItemParams(
+            {getFieldProps},
+            {
+              label:'配送时间(分钟)',
+              cols:_cols._8_12,
+              field:'time2'
+            })}/>
         </Col>
 
       </Row>
       <p>产品定价</p>
       <Row>
       <Col sm={22}>
-
-        {Item_Radios(getFieldProps,{cols:_cols._4_16,label:"定价模式",field:'type2',data:[{val:'1',title:'阶梯定价'},{val:'2',title:'一口价'}]})}
-
-        {Item_Radios(getFieldProps,{cols:_cols._4_16,label:"定价方案",field:'type3',data:[{val:1,title:'阶梯定价'},{val:2,title:'一口价'}]})}
-
+        <Item_Radios {...ItemParams(
+          {getFieldProps},
+           {
+             data:[{val:'1',title:'阶梯定价'},{val:'2',title:'一口价'}],
+             label:'定价模式',cols:_cols._8_12,
+             field:'type2'
+           })}
+        />
+        <Item_Radios {...ItemParams(
+          {getFieldProps},
+           {
+             data:[{val:'1',title:'阶梯定价1'},{val:'2',title:'一口价1'}],
+             label:'定价方案',cols:_cols._8_12,
+             field:'type3'
+           })}
+        />
       </Col>
       </Row>
       <FormItem wrapperCol={{ span: 16, offset: 6 }}>

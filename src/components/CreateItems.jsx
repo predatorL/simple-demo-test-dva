@@ -1,10 +1,29 @@
 import React, {Component, PropTypes} from 'react';
-import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio} from 'antd';
+import {Form, Input, InputNumber, Button, Checkbox, Row, Col, DatePicker, Radio, Select} from 'antd';
 
-const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
+const [FormItem, RadioGroup, Option] = [Form.Item, Radio.Group, Select.option];
 
-export let Item_Radios = (getFieldProps,params) => {
-  const {cols,field="noFiled",label = "没填值", data} = params;
+export let ItemParams = (item,{cols,field,label,data}) => {
+  return Object.assign({},item,{
+    cols: {
+      labelCol: { span: cols.l_s },
+      wrapperCol: { span: cols.w_s },
+    },
+    field,
+    label,
+    data
+  });
+};
+
+export let Item_Input = ({getFieldProps,cols,field,label, data}) => {
+  return (
+    <FormItem label={label} {...cols} >
+      <Input {...getFieldProps(field)}/>
+    </FormItem>
+  );
+};
+
+export let Item_Radios = ({getFieldProps,cols,field,label, data}) => {
   return (
     <FormItem label={label} {...cols} >
       <RadioGroup {...getFieldProps(field)}>
@@ -16,14 +35,14 @@ export let Item_Radios = (getFieldProps,params) => {
   );
 };
 
-export let Item_Selects = (getFieldProps,params) => {
-  const {cols,field="noFiled",label = "没填值", data} = params;
+export let Item_Selects = ({getFieldProps,cols,field,label, data}) => {
   return (
     <FormItem label={label} {...cols} >
-      <RadioGroup {...getFieldProps(field)}>
-        <Radio value={1}>阶梯定价</Radio>
-        <Radio value={2}>一口价</Radio>
-      </RadioGroup>
+      <Select {...getFieldProps(field)}>
+        {data.map(
+          (item,index) => <Option key={field + index} value={item.val}>{item.title}</Option>
+        )}
+      </Select>
     </FormItem>
   );
 };
