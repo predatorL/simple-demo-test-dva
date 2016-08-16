@@ -3,6 +3,8 @@ import {Router, Route, IndexRoute, Link} from 'dva/router';
 let pageRouts = [
     require('./sub_business/routes'),
  ];
+  console.log(pageRouts)
+  console.log(pageRouts.path)
 pageRouts.push({
   path: '/*',
   getComponent: (location, callback) => {console.log('*')

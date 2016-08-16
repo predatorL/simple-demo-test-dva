@@ -6,11 +6,24 @@ const SubMenu = Menu.SubMenu;
 
 const renderMenu = () => {
   return _Aside.map((_item, _index) => {
-    const _subItems = _item.subItems.map((_subItem, subIndex) => {
+    const _subItems = _item.subItems.map((_subItem, _subIndex) => {
+      // 三级菜单
+      const _thirdItems = _subItem.thirdItems.map((_thirdItem,_thirdIndex) =>{
+        return (
+          <Menu.Item key={_index + "_" + _subIndex+'_'+_thirdIndex}>
+            <a href={_thirdItem.a_path}>{_thirdItem.title}</a>
+          </Menu.Item>
+        )
+      })
       return (
-        <Menu.Item key={_index + "_" + subIndex}>
-          <a href={_subItem.a_path}>{_subItem.title}</a>
-        </Menu.Item>
+        <SubMenu key={_index + "_" + _subIndex} title={
+          <span >
+          <Icon type={_subItem.icon}/>
+          <b className = "title-text" > {_subItem.title} </b> </span>
+        }>
+          {_thirdItems}
+        </SubMenu>
+
       );
     });
     return (
