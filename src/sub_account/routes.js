@@ -3,23 +3,15 @@ const subRoutes = [
     path: 'merchants_info',
     getComponent: (location, callback) => {
       require.ensure([], (require) => {
-        callback(null, require('./pages/merchants_info.jsx'));
+        callback(null, require('./pages/merchants_info'));
       })
     },
   },
   {
-    path: 'merchants_info_submission',
+    path: 'my_account',
     getComponent: (location, callback) => {
       require.ensure([], (require) => {
-        callback(null, require('./pages/merchants_info_submission.jsx'));
-      })
-    },
-  },
-  {
-    path: 'my_Account',
-    getComponent: (location, callback) => {
-      require.ensure([], (require) => {
-        callback(null, require('./pages/my_Account.jsx'));
+        callback(null, require('./pages/my_account'));
       })
     },
   }

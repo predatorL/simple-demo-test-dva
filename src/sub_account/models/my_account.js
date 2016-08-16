@@ -2,7 +2,7 @@ import { call, put } from 'dva/effects';
 import { query } from '../../services/query';
 
 export default  {
-  namespace: 'business_area',
+  namespace: 'my_account',
   state: {
     searchs: {
       area: 'lucy',
@@ -15,9 +15,6 @@ export default  {
       currentItem: {},
       modalVisible: false,
       modalType: 'create'
-    },
-    configs: {
-      api: '/api/area'
     }
   },
 

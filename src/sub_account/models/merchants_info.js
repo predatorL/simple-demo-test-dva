@@ -2,7 +2,7 @@ import { call, put } from 'dva/effects';
 import { query } from '../../services/query';
 
 export default  {
-  namespace: 'business_area',
+  namespace: 'merchants_info',
   state: {
     searchs: {
       area: 'lucy',
@@ -27,9 +27,7 @@ export default  {
 
   effects: {
     *['list/query'](params) {
-      const {
-        data
-      } = yield call(query, '/api/area', params.payload);
+      const {data} = yield call(query, '/api/area', params.payload);
       if (data) {
         yield put({
           type: 'list/query/success',
