@@ -1,7 +1,7 @@
 import './index.html';
 import dva, { connect } from 'dva';
 let allModels = [
-  require('./sub_business/models')
+   require('./sub_business/models')
 ];
 
 // 1. Initialize

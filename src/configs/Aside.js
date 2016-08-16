@@ -1,30 +1,48 @@
-/*
-{
-  "title": "用户管理",
-  "icon": "user",
-  "path": "user",
-  "subItems": [{
-    "title": "用户列表",
-    "path": "user_list"
-}
-*/
+
 const _menu = [{
   "title": "业务管理",
   "icon": "user",
-  "subItems": [{
-    "title": "产品服务设置",
-    "a_path": "/#/business/product_setup"
-  }, {
-    "title": "商圈管理",
-    "a_path": "/#/business/area"
-  }, {
-    "title": "人员管理",
-    "a_path": "/#/business/staff"
-  }, {
-    "title": "商家管理",
-    "a_path": "/#/business/partner"
-  }]
-}];
+      "subItems": [
+        {
+        "title": "产品服务设置",
+        "a_path": "/#/sub_business/product_setup"
+        },
+        {
+        "title": "商圈管理",
+        "a_path": "/#/sub_business/area"
+        },
+        {
+        "title": "人员管理",
+        "a_path": "/#/sub_business/staff"
+        },
+        {
+        "title": "商家管理",
+        "a_path": "/#/sub_business/partner"
+        }
+    ]
+  },
+
+  {
+    "title": "账号管理",
+    "icon": "user",
+    "subItems": [
+      {
+      "title": "商户资料",
+      "a_path": "/#/sub_account/merchants_info"
+     },
+     {
+      "title": "商圈管理",
+      "a_path": "/#/sub_account/merchants_info_submission"
+      },
+      {
+      "title": "我的账号",
+      "a_path": "/#/sub_account/my_Account"
+      }
+    ]
+  }
+];
+
+
 
 /*
 {

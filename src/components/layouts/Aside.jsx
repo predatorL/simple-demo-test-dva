@@ -14,7 +14,7 @@ const renderMenu = () => {
       );
     });
     return (
-      <SubMenu key={_item.icon} title={
+      <SubMenu key={_index} title={
         <span >
         <Icon type={_item.icon}/>
         <b className = "title-text" > {_item.title} </b> </span>

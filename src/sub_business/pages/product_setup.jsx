@@ -6,7 +6,7 @@ import {Item_Radios} from '../../components/CreateItems.jsx';
 
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
 let MainForm = (props) => {
-  const {getFieldProps, validateFields, getFieldsValue} = props.form;
+ const {getFieldProps, validateFields, getFieldsValue} = props.form;
 
   const _cols = {
     _8_12: {labelCol: { span: 6 },  wrapperCol: { span: 14 }},
