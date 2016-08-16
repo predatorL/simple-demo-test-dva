@@ -74,11 +74,6 @@ const _menu = [
       "a_path": "/#/sub_account/merchants_info",
       "hasThird":false,
      },
-     {
-      "title": "商圈管理",
-      "a_path": "/#/sub_account/merchants_info_submission",
-      "hasThird":false,
-      },
       {
       "title": "我的账号",
       "a_path": "/#/sub_account/my_Account",

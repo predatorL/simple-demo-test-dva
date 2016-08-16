@@ -1,7 +1,8 @@
 import React, {PropTypes} from 'react';
 import {Router, Route, IndexRoute, Link} from 'dva/router';
 let pageRouts = [
-    require('./sub_business/routes'),
+    // require('./sub_business/routes'),
+    require('./sub_account/routes'),
  ];
   console.log(pageRouts)
   console.log(pageRouts.path)
