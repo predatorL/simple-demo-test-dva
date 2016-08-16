@@ -5,6 +5,11 @@ import { Item_Radios, Item_Input} from '../../components/CreateItems.jsx';
 
 const [FormItem, RadioGroup] = [Form.Item, Radio.Group];
 
+//configs
+let pageCfgs = {
+  field: {}
+};
+
 //components
 let MainForm = (props) => {
   const {getFieldProps, validateFields, getFieldsValue} = props.form;
